@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import ttk, messagebox
+from tkinter import PhotoImage
 
 from validadorcep import buscar_por_cep, buscar_por_endereco
 
@@ -90,16 +91,58 @@ def criar_interface():
     global cep_entry, uf_entry, cidade_entry, logradouro_entry, result_text, result_label, address_frame
 
     root = tk.Tk()
-    root.title("Validador de CEP")
+    root.overrideredirect(True)
     root.geometry("640x460")
-    root.resizable(False, False)
-    
+    root.configure(bg="#f4f4f4")
+
+    title_bar = tk.Frame(root, bg="#D9D9D6", height=32)
+    title_bar.pack(fill="x")
+
+    icon_image = PhotoImage(file="assets/logo-header2.png")
+    icon_label = tk.Label(title_bar, image=icon_image, bg="#D9D9D6")
+    icon_label.image = icon_image
+    icon_label.pack(side="left", padx=(4, 2), pady=2)
+
+    title_label = tk.Label(
+        title_bar,
+        text="Validador de CEP",
+        bg="#D9D9D6",
+        fg="Black",
+        font=(None, 10, "bold")
+    )
+    title_label.pack(side="left", padx=4)
+
+    def fechar():
+        root.destroy()
+
+    close_button = tk.Button(
+        title_bar,
+        text="✕",
+        bg="#ff0000",
+        fg="white",
+        bd=0,
+        padx=8,
+        pady=2,
+        command=fechar
+    )
+    close_button.pack(side="right", padx=4, pady=4)
+
+    root.update_idletasks()
+    largura = 640
+    altura = 460
+    x = (root.winfo_screenwidth() - largura) // 2
+    y = (root.winfo_screenheight() - altura) // 2
+    root.geometry(f"{largura}x{altura}+{x}+{y}")
+
+    # ------------------------------------
 
     main_frame = ttk.Frame(root, padding=16)
-    main_frame.grid(sticky="nsew")
+    main_frame.pack(fill="both", expand=True)
 
-    title = ttk.Label(main_frame, text="Validador de CEP", font=(None, 18, "bold"))
+
+    title = ttk.Label(main_frame, text="Validador de CEP", font=(None, 16, "bold"))
     title.grid(row=0, column=0, columnspan=3, pady=(0, 14), sticky="w")
+
 
     ttk.Label(main_frame, text="Digite o CEP:").grid(row=1, column=0, sticky="w")
     cep_entry = ttk.Entry(main_frame, width=20)
