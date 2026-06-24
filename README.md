@@ -23,7 +23,7 @@ O projeto está sendo estruturado utilizando os seguintes conceitos fundamentais
 
 - [x] Estruturação inicial do código e testes de conexão com a API.
 - [X] Implementação do menu de captura do CEP via teclado.
-- [ ] Tratamento de erros completo (para caso o usuário digite um CEP).
+- [ ] Tratamento de erros completo (para caso o usuário digite um CEP inválido).
 
 ---
 
