@@ -93,22 +93,22 @@ def criar_interface():
     root = tk.Tk()
     root.overrideredirect(True)
     root.geometry("640x460")
-    root.configure(bg="#f4f4f4")
+    root.configure(bg="#F3F3F3")
 
     title_bar = tk.Frame(root, bg="#D9D9D6", height=32)
     title_bar.pack(fill="x")
 
-    icon_image = PhotoImage(file="assets/logo-header2.png")
+    icon_image = PhotoImage(file="assets/redstone_capital.png")
     icon_label = tk.Label(title_bar, image=icon_image, bg="#D9D9D6")
     icon_label.image = icon_image
     icon_label.pack(side="left", padx=(4, 2), pady=2)
 
     title_label = tk.Label(
         title_bar,
-        text="Validador de CEP",
+        text="Redstone Capital - Validador de CEP",
         bg="#D9D9D6",
         fg="Black",
-        font=(None, 10, "bold")
+        font=(None, 8, "bold")
     )
     title_label.pack(side="left", padx=4)
 

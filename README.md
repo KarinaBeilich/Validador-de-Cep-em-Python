@@ -22,8 +22,9 @@ O projeto está sendo estruturado utilizando os seguintes conceitos fundamentais
 ## 🎨 Funcionalidades Atuais e Próximos Passos
 
 - [x] Estruturação inicial do código e testes de conexão com a API.
-- [ ] Implementação do menu de captura do CEP via teclado.
-- [ ] Tratamento de erros completo (para caso o usuário digite um CEP inexistente ou falte internet).
+- [X] Implementação do menu de captura do CEP via teclado.
+- [X] Tratamento de erros completo (para caso o usuário digite um CEP inexistente).
+- [ ] Vincular ao Banco de dados para efetuar a atualização automatica dos CEPs gerais. 
 
 ---
 

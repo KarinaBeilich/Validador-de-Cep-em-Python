@@ -1,7 +1,7 @@
 import requests
 
 def buscar_por_cep(cep):
-    url = f"https://viacep.com.br/ws/{cep}/json/"
+    url = f"https://viacep.com.br/ws/{cep}/json/" 
     try:
         resposta = requests.get(url, timeout=5)
         dados = resposta.json()
